@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio for Mac
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MINF_VR_lerngruppe", "MINF_VR_lerngruppe.csproj", "{98B0DEB3-D3F0-94A9-E0D7-8AEF1D743946}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MINF_VR_lerngruppe.Editor", "MINF_VR_lerngruppe.Editor.csproj", "{053D81F9-A755-87E4-313B-86356F4D9CE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{98B0DEB3-D3F0-94A9-E0D7-8AEF1D743946}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98B0DEB3-D3F0-94A9-E0D7-8AEF1D743946}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98B0DEB3-D3F0-94A9-E0D7-8AEF1D743946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{053D81F9-A755-87E4-313B-86356F4D9CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{053D81F9-A755-87E4-313B-86356F4D9CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{053D81F9-A755-87E4-313B-86356F4D9CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{053D81F9-A755-87E4-313B-86356F4D9CE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
