@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +9,7 @@ public class CameraSeeTroughScript : MonoBehaviour {
     private WebCamTexture backCam;
     private Texture defaultBackground;
 
+    //public Text text;
     public RawImage background;
     public AspectRatioFitter fit;
 
@@ -19,7 +20,7 @@ public class CameraSeeTroughScript : MonoBehaviour {
 
         if(devices.Length == 0)
         {
-            Debug.Log("No Camera detected");
+            //text.text = "No Camera detected";
             camAvailable = false;
             return;
         }
@@ -34,7 +35,7 @@ public class CameraSeeTroughScript : MonoBehaviour {
 
         if(backCam == null)
         {
-            Debug.Log("Unable to find back camera");
+            //text.text =  "Unable to find back camera";
             return;
         }
 
@@ -46,6 +47,9 @@ public class CameraSeeTroughScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        //Camera.main.fieldOfView = 180.0f;
+              
         if(!camAvailable)
         {
             return;

@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{98B0DEB3-D3F0-94A9-E0D7-8AEF1D743946}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraSeeTroughScript.cs">
     <Files>
-      <File FileName="Assets/Scripts/CameraSeeTroughScript.cs" Line="10" Column="17" />
+      <File FileName="Assets/Scripts/CameraSeeTroughScript.cs" Line="12" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.MINF__VR__lerngruppe PreferredExecutionTarget="Unity.Editor" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
