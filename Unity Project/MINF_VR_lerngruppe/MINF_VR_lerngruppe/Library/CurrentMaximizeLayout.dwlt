@@ -50,7 +50,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 693
+<<<<<<< HEAD
     width: 651
+=======
+    width: 723
+>>>>>>> master
     height: 185
 --- !u!114 &3
 MonoBehaviour:
@@ -70,7 +74,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 653
+=======
+    width: 725
+>>>>>>> master
     height: 806
   m_MinSize: {x: 202, y: 342}
   m_MaxSize: {x: 4002, y: 8042}
@@ -92,7 +100,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 653
+=======
+    width: 725
+>>>>>>> master
     height: 600
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -126,7 +138,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 93
+<<<<<<< HEAD
     width: 651
+=======
+    width: 723
+>>>>>>> master
     height: 579
   m_SceneLighting: 1
   lastFramingTime: 0
@@ -269,7 +285,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 600
+<<<<<<< HEAD
     width: 653
+=======
+    width: 725
+>>>>>>> master
     height: 206
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
@@ -292,9 +312,15 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 653
     y: 0
     width: 231
+=======
+    x: 725
+    y: 0
+    width: 204
+>>>>>>> master
     height: 806
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
@@ -325,6 +351,7 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 655
     y: 93
     width: 227
@@ -334,6 +361,17 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 88fbffff00000000
+=======
+    x: 727
+    y: 93
+    width: 200
+    height: 785
+  m_TreeViewState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: a0380000
+    m_LastClickedID: 14496
+    m_ExpandedIDs: 98fbffff00000000c6380000
+>>>>>>> master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -370,7 +408,11 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 884
+=======
+    x: 929
+>>>>>>> master
     y: 0
     width: 234
     height: 806
@@ -403,8 +445,13 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 886
     y: 93
+=======
+    x: 931
+    y: 19
+>>>>>>> master
     width: 230
     height: 785
   m_SearchFilter:
@@ -419,19 +466,33 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
     - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
   - Assets/Scripts
+=======
+    - Assets/OVR
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/OVR
+>>>>>>> master
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/dennis/Documents/projekte/MINF/Unity Project/MINF_VR_lerngruppe/MINF_VR_lerngruppe
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: fa340000
     m_LastClickedID: 13562
     m_ExpandedIDs: 00000000102c0000502c00004a300000a4320000e2330000663600006836000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: a2320000
+    m_LastClickedID: 12962
+    m_ExpandedIDs: 000000000e2c00004e2c000048300000a2320000e0330000f2380000f438000000ca9a3bffffff7f
+>>>>>>> master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -459,7 +520,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000102c0000502c00004a300000a4320000e23300006636000068360000
+=======
+    m_ExpandedIDs: 000000000e2c00004e2c000048300000a2320000e0330000f2380000f4380000
+>>>>>>> master
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -484,9 +549,15 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
+=======
+    m_SelectedInstanceIDs: a0380000
+    m_LastClickedInstanceID: 14496
+    m_HadKeyboardFocusLastEvent: 0
+>>>>>>> master
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -528,9 +599,15 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1118
     y: 0
     width: 322
+=======
+    x: 1163
+    y: 0
+    width: 277
+>>>>>>> master
     height: 806
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
@@ -561,9 +638,15 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
     x: 1120
     y: 93
     width: 320
+=======
+    x: 1165
+    y: 19
+    width: 275
+>>>>>>> master
     height: 785
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0
