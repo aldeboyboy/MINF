@@ -10,7 +10,7 @@ public class CameraSeeTroughScript : MonoBehaviour {
     private Texture defaultBackground;
     private bool cameraOn;
 
-    public Text text;
+    //public Text text;
     public RawImage background;
     public AspectRatioFitter fit;
     public Canvas canvas;
@@ -21,7 +21,7 @@ public class CameraSeeTroughScript : MonoBehaviour {
 
         cameraOn = false;
         canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        text.text = canvas.renderMode.ToString();
+        //text.text = canvas.renderMode.ToString();
 	}
 	
 	// Update is called once per frame
@@ -45,13 +45,13 @@ public class CameraSeeTroughScript : MonoBehaviour {
 
         if (!cameraOn && OVRInput.Get(OVRInput.Button.Any))
         {
-            text.text = canvas.renderMode.ToString();
+            //text.text = canvas.renderMode.ToString();
             cameraOn = true;
             canvas.renderMode = RenderMode.ScreenSpaceCamera;
         }
         else if (cameraOn && OVRInput.Get(OVRInput.Button.Any))
         {
-            text.text = canvas.renderMode.ToString();
+            //text.text = canvas.renderMode.ToString();
             cameraOn = false;
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         }
