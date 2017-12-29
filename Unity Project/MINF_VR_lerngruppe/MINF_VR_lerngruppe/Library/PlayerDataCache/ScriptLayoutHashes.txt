@@ -8,6 +8,7 @@ c6cd185c7eb3f770997e6ae64fa570e2 Assembly-CSharp.dll:VRTK.GrabAttachMechanics.VR
 2cf9854026c5b2311c78f2264e1248f4 Assembly-CSharp.dll:VRTK.VRTK_InteractHaptics
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.Examples.PanelMenu.PanelMenuUIGrid
 e17f92d3b13f18bef6e4629b9bff76dd Assembly-CSharp.dll:.DemoBoxesGui
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OvrAvatarBody
 e7599d183d16b78eba6921d0e93233d1 Assembly-CSharp.dll:VRTK.Examples.Tests.VRTK_ControllerReference_Setup
 6940302fd547c8ec359e79a34e2dc4f3 Assembly-CSharp.dll:VRTK.GrabAttachMechanics.VRTK_RotatorTrackGrabAttach
 7df47d262399a6f845c2ed06b92cba9b Assembly-CSharp.dll:.OVRCameraRig
@@ -53,6 +54,7 @@ a766dc282749a29c7956babc2a370a99 Assembly-CSharp.dll:VRTK.VRTK_Knob
 095dbdba1b42a126c40a8eba2f8c6b30 Assembly-CSharp.dll:VRTK.VRTK_Slider
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:ExitGames.UtilityScripts.ButtonInsideScrollList
 b8d1a00393b74d938f7dc540c521a9f1 Assembly-CSharp.dll:.OVRManager
+069dbb2201dc5bbfc5610a4e530f0cd0 Assembly-CSharp.dll:.OvrAvatarRenderComponent
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.NetworkCullingHandler
 3c22ce635d932fe825f5934ec0a12d43 Assembly-CSharp.dll:VRTK.VRTK_RoomExtender_PlayAreaGizmo
 c88a5cb05e167f1437489cffb7e355c5 Assembly-CSharp.dll:VRTK.VRTK_RoomExtender
@@ -147,6 +149,7 @@ ebfdd2489194de73284a969277395ad0 Assembly-CSharp.dll:.DemoRPGMovement
 e009ce98615d616811e8c3d53eafc755 Assembly-CSharp.dll:VRTK.VRTK_InteractControllerAppearance
 e727119002bca07db2dbc99d5fc8ac7a Assembly-CSharp.dll:VRTK.VRTK_TransformFollow
 a7bb959071ee77caeff2a0fdfe380ea9 Assembly-CSharp.dll:VRTK.UnityEventHelper.VRTK_HeadsetControllerAware_UnityEvents
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OvrAvatarSDKManager
 5fe4ed23371235844f0fa3e30c5abb28 Assembly-CSharp.dll:VRTK.VRTK_DashTeleport
 adf425a0a9ab4a6a9a87f59fd559c237 Assembly-CSharp.dll:VRTK.Examples.ButtonReactor
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.SDK_DaydreamController
@@ -160,9 +163,11 @@ e7b73f6a7bbb344766009e3e5085a145 Assembly-CSharp.dll:VRTK.VRTK_PlayerObject
 6475769091568e8685a22e493bb5795b Assembly-CSharp.dll:.GUIFriendsInRoom
 4e469194240e1d6a6ba06acada55c2ac Assembly-CSharp.dll:VRTK.Examples.VRTK_ControllerPointerEvents_ListenerExample
 9a6a35eef9304b6a4f510ee56005bc7a Assembly-CSharp.dll:VRTK.VRTK_HeadsetCollision
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OvrAvatarBase
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OnClickDisableObj
 e5bc3f73834323de1f4c96ec5eb253e7 Assembly-CSharp.dll:VRTK.SecondaryControllerGrabActions.VRTK_ControlDirectionGrabAction
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.SDK_SimSystem
+5e1701ec82b76ba237999557f0b0e744 Assembly-CSharp.dll:.OvrAvatarLocalDriver
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.VRTK_PanelMenuItemController
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 970a95104359198fe1a98ef48655de8c UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -220,6 +225,7 @@ c1df6bba7f7b35a48ac544b9017761dd Assembly-CSharp.dll:.PlayerDiamond
 1de5b0589e6fb98c8b8d7fcded724e3b Assembly-CSharp.dll:.CullArea
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.Examples.VRTK_ControllerInteract_ListenerExample
 fc4c581d5c780cfbc749c132df4d5008 Assembly-CSharp.dll:.NamePickGui
+e7de64a2f47c8a0046023c2b0a8f83bb Assembly-CSharp.dll:.OvrAvatarSettings
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PunPlayerScores
 d7c3cc9e6aeec9a00634f6abffbe35e2 Assembly-CSharp.dll:.ConnectAndJoinRandom
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.SDK_SimBoundaries
@@ -242,8 +248,10 @@ e626bae268f8b272b7a2d07760d262c6 Assembly-CSharp.dll:.PickupController
 a7fb925992eaa6c7ad4ddffedadd1fb5 Assembly-CSharp.dll:VRTK.VRTK_InteractableObject
 1356b4a6096c35c829823b7e28399030 Assembly-CSharp.dll:.HubGui
 a97206b1f732dc0aa9b23a14352f4399 Assembly-CSharp.dll:.OVRPlatformMenu
+13a6a1a75679b3c0344b1b6c7e825e34 Assembly-CSharp.dll:.OvrAvatarComponent
 6940302fd547c8ec359e79a34e2dc4f3 Assembly-CSharp.dll:VRTK.GrabAttachMechanics.VRTK_TrackObjectGrabAttach
 5a78906060300940acb71bc3dfb6396d Assembly-CSharp.dll:.DragToMove
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OvrAvatarTouchController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CubeLerp
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.SDK_XimmerseSystem
 c6997fc5721155b77c64f6149b585ca9 Assembly-CSharp.dll:VRTK.VRTK_UICanvas
@@ -260,6 +268,7 @@ a7fb925992eaa6c7ad4ddffedadd1fb5 Assembly-CSharp.dll:VRTK.Examples.Whirlygig
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.SDK_SteamVRHeadset
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OVRDebugInfo
 f8414a863026d11af6310ea97a9ae07b Assembly-CSharp.dll:VRTK.VRTK_ObjectAutoGrab
+069dbb2201dc5bbfc5610a4e530f0cd0 Assembly-CSharp.dll:.OvrAvatarSkinnedMeshRenderPBSComponent
 661654da055cf047f7fbb0c9908ea242 Assembly-CSharp.dll:VRTK.VRTK_TouchpadControl
 0c6d84a52443d2ee1fa23eda4691ae67 Assembly-CSharp.dll:.MoveBlock
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.Examples.Sphere_Spawner
@@ -281,6 +290,7 @@ c25ba4e720f8969c66a8c7f6897fc545 Assembly-CSharp.dll:VRTK.UnityEventHelper.VRTK_
 9a93f748b7c6fda90f20cf8d995df907 Assembly-CSharp.dll:.OVRResetOrientation
 bfb817415ad34b6d8fba7d4e3e4f35a5 Assembly-CSharp.dll:VRTK.UnityEventHelper.VRTK_Control_UnityEvents
 2165accb3ea2740b87b88a727c43d0b3 Assembly-CSharp.dll:.PickupDemoGui
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PhotonAvatarView
 5f1ee95103896e75aa6e6b415add844b Assembly-CSharp.dll:.ChannelSelector
 8ac0e81e72f27c2bfd7ff7eeac4c1cb1 Assembly-CSharp.dll:VRTK.VRTK_AdaptiveQuality
 090584907af2e462994cc893ced507b3 Assembly-CSharp.dll:.PhotonRigidbodyView
@@ -362,6 +372,8 @@ a10bf39be5e749ba1780f1f0a8805935 Assembly-CSharp.dll:VRTK.VRTK_IndependentRadial
 7b7745d8d1ab7fe13f98bfffbf52c18d Assembly-CSharp.dll:.OVRWaitCursor
 847077fe05868c3158b939dd4bcb8731 Assembly-CSharp.dll:VRTK.UnityEventHelper.VRTK_DestinationPoint_UnityEvents
 a34eb1ec5ba768176a0ba56de7db3022 Assembly-CSharp.dll:VRTK.VRTK_PolicyList
+1e8fa1709a7d238b587520423fa03a93 Assembly-CSharp.dll:.OvrAvatar
+5e1701ec82b76ba237999557f0b0e744 Assembly-CSharp.dll:.OvrAvatarRemoteDriver
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.Examples.Remote_Beam
 ccd25ccca39fd5159c3471f7762e1ced Assembly-CSharp.dll:.OVRChromaticAberration
 3390da0fa445ab5d676b24efb56cf5c0 Assembly-CSharp.dll:.OVRSceneSampleController
@@ -371,6 +383,8 @@ ea580b2edab741d1d6e6445b14097645 Assembly-CSharp.dll:.RPGCamera
 173a033cde910692227c728d6b89fedd Assembly-CSharp.dll:.OnClickCallMethod
 1356b4a6096c35c829823b7e28399030 Assembly-CSharp.dll:.IELdemo
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GameLogic
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OvrAvatarSettingsEditor
+069dbb2201dc5bbfc5610a4e530f0cd0 Assembly-CSharp.dll:.OvrAvatarProjectorRenderComponent
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 2a56361227def9f56c2cf57a88b32f4d UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
@@ -393,6 +407,7 @@ d0f5d7c09608f97d1a121224b19735c1 Assembly-CSharp.dll:VRTK.UnityEventHelper.VRTK_
 abdbfd4cd4b34feeb1669200a186d571 Assembly-CSharp.dll:VRTK.UnityEventHelper.VRTK_PlayerClimb_UnityEvents
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 57c5ec87bdccd1b356bca2db2b2e4159 Assembly-CSharp.dll:VRTK.VRTK_ObjectTooltip
+6de6070780d7efa822923e689e617f4c Assembly-CSharp.dll:.OvrAvatarMeshInstance
 9cb24d80f90c6c239d5304446a0d7f3e Assembly-CSharp.dll:.CubeInter
 0f414e4fe0a7150cc9b3102840973dc2 Assembly-CSharp.dll:VRTK.VRTK_UIDraggableItem
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.Examples.Archery.ArrowNotch
@@ -403,7 +418,7 @@ febb860c81dce3b7f633ebf56de24419 Assembly-CSharp.dll:.IdleRunJump
 55b3a7b2ff445b75487922996bd8611e Assembly-CSharp.dll:ExitGames.Demos.DemoAnimator.PlayerManager
 080712d5bec8e6ec128ae566afef7b09 Assembly-CSharp.dll:VRTK.UnityEventHelper.VRTK_InteractUse_UnityEvents
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.RandomMatchmaker
-808f948c63eb7892fd864dc68cd4e229 Assembly-CSharp.dll:.CameraSeeTroughScript
+7a242913c706a082925d89ec057d64e8 Assembly-CSharp.dll:.CameraSeeTroughScript
 31902b17ebbee46b5918383d3358ad35 Assembly-CSharp.dll:VRTK.Examples.Archery.BowAim
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -429,6 +444,7 @@ fd93c5d0bb95f99e632f4a74c7bd1570 Assembly-CSharp.dll:VRTK.VRTK_BezierPointerRend
 c935f8f6b6daf6b6546c77d6dc27423c Assembly-CSharp.dll:VRTK.VRTK_RigidbodyFollow
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ThirdPersonNetwork
 995a49f05340fad7540e35836ef32ed7 Assembly-CSharp.dll:VRTK.Examples.Remote_Beam_Controller
+069dbb2201dc5bbfc5610a4e530f0cd0 Assembly-CSharp.dll:.OvrAvatarSkinnedMeshRenderComponent
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.SDK_XimmerseHeadset
 3b357d0639181cf653cb338e8c077b24 Assembly-CSharp.dll:VRTK.VRTK_Pointer
 3c64e2ee2ee0571fefcc0fe9214f335c Assembly-CSharp.dll:.RpsDemoConnect
@@ -450,6 +466,7 @@ ec0082b40adf3b0930cd87250ffdbf1d Assembly-CSharp.dll:.SupportLogger
 bbbb2bfceb4d350c4182487925b6addf Assembly-CSharp.dll:VRTK.Examples.VRTK_ControllerUIPointerEvents_ListenerExample
 803e7c227b268d3b9e0ed196af87803c Assembly-CSharp.dll:VRTK.VRTK_Logger
 9f772433b7c825b8cb0ad392af5041ec Assembly-CSharp.dll:VRTK.VRTK_Wheel
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OvrAvatarHand
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.RadialButtonIcon
 2d4a1286379f30096b2cd1920a85978a Assembly-CSharp.dll:VRTK.VRTK_WarpObjectControlAction
 a2d612afa0d90f75edf1d10832a65609 Assembly-CSharp.dll:.JumpAndRunMovement
@@ -480,7 +497,7 @@ b2dc25029b6f083ffbbdf9df269f825a Assembly-CSharp.dll:.InRoomChat
 327ca7b7291af74700c58954addea881 Assembly-CSharp.dll:VRTK.UnityEventHelper.VRTK_BasicTeleport_UnityEvents
 428a2d3b6f5722e59d703e9bb8bfaec6 Assembly-CSharp.dll:VRTK.UnityEventHelper.VRTK_SDKManager_UnityEvents
 df621ec6ee18d8e0ffab7ab991ce31ae Assembly-CSharp.dll:VRTK.UnityEventHelper.VRTK_BodyPhysics_UnityEvents
-f9d9edbd441d4cc5471cf87b02e157a2 Assembly-CSharp.dll:.PhotonController
+37e0d8b265346bcd4bb6670ffddca2f2 Assembly-CSharp.dll:.PhotonController
 b9c1412244569f4119b41a384d6a5ab0 Assembly-CSharp.dll:VRTK.Examples.Archery.BowAnimation
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.Examples.Breakable_Cube
 5c8cb1a0675c0e686821e7fa81cc40af Assembly-CSharp.dll:VRTK.Examples.UseRotate
@@ -490,20 +507,3 @@ a7fb925992eaa6c7ad4ddffedadd1fb5 Assembly-CSharp.dll:VRTK.Examples.LightSaber
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:VRTK.SDK_SteamVRController
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ClickDetector
 54a26a95db9c623b6eb6fc01ae3ef891 Assembly-CSharp.dll:.CubeExtra
-1e8fa1709a7d238b587520423fa03a93 Assembly-CSharp.dll:.OvrAvatar
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OvrAvatarSettingsEditor
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OvrAvatarSDKManager
-13a6a1a75679b3c0344b1b6c7e825e34 Assembly-CSharp.dll:.OvrAvatarComponent
-069dbb2201dc5bbfc5610a4e530f0cd0 Assembly-CSharp.dll:.OvrAvatarSkinnedMeshRenderComponent
-069dbb2201dc5bbfc5610a4e530f0cd0 Assembly-CSharp.dll:.OvrAvatarSkinnedMeshRenderPBSComponent
-069dbb2201dc5bbfc5610a4e530f0cd0 Assembly-CSharp.dll:.OvrAvatarRenderComponent
-e7de64a2f47c8a0046023c2b0a8f83bb Assembly-CSharp.dll:.OvrAvatarSettings
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OvrAvatarTouchController
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OvrAvatarBase
-5e1701ec82b76ba237999557f0b0e744 Assembly-CSharp.dll:.OvrAvatarLocalDriver
-6de6070780d7efa822923e689e617f4c Assembly-CSharp.dll:.OvrAvatarMeshInstance
-5e1701ec82b76ba237999557f0b0e744 Assembly-CSharp.dll:.OvrAvatarRemoteDriver
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PhotonAvatarView
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OvrAvatarHand
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.OvrAvatarBody
-069dbb2201dc5bbfc5610a4e530f0cd0 Assembly-CSharp.dll:.OvrAvatarProjectorRenderComponent

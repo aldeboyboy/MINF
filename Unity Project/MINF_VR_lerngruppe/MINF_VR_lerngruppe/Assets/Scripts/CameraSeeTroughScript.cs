@@ -2,32 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon;
 
-public class CameraSeeTroughScript : MonoBehaviour {
+public class CameraSeeTroughScript : PunBehaviour {
 
     private bool camAvailable;
     private WebCamTexture backCam;
     private Texture defaultBackground;
     private bool cameraOn;
 
-    //public Text text;
+    private ExitGames.Client.Photon.Hashtable hashtable = new ExitGames.Client.Photon.Hashtable();
+
+    private RawImage remotePlane;
+
     public RawImage background;
     public AspectRatioFitter fit;
-    public Canvas canvas;
+
+    public Canvas localCanvas;
+    public Canvas remoteCanvas;
 
 	// Use this for initialization
 	void Start () {
         InitCamera();
 
-        cameraOn = false;
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        cameraOn = true;
+        localCanvas.renderMode = RenderMode.ScreenSpaceCamera;
+        remoteCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
         //text.text = canvas.renderMode.ToString();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        //Camera.main.fieldOfView = 180.0f;
+        if(GameObject.Find("RemoteAvatar(Clone)")){
+            remotePlane = GameObject.Find("remoteBg").GetComponent<RawImage>();
+
+            Debug.Log("playerID = " + PhotonNetwork.player.ID);
+
+            if(PhotonNetwork.player.ID == 1){
+                SetTexturePlayer1();
+                ShowTexturePlayer1();
+            }else if(PhotonNetwork.player.ID == 2){
+                SetTexturePlayer2();
+                ShowTexturePlayer2();
+            }
+
+        }
               
         if(!camAvailable)
         {
@@ -43,17 +63,21 @@ public class CameraSeeTroughScript : MonoBehaviour {
         int orient = -backCam.videoRotationAngle;
         background.rectTransform.localEulerAngles = new Vector3(0, 0, orient);
 
-        if (!cameraOn && OVRInput.Get(OVRInput.Button.Any))
+        if (!cameraOn && (OVRInput.Get(OVRInput.Button.Any) || Input.GetKeyDown("space")))
         {
             //text.text = canvas.renderMode.ToString();
             cameraOn = true;
-            canvas.renderMode = RenderMode.ScreenSpaceCamera;
+            localCanvas.renderMode = RenderMode.ScreenSpaceCamera;
+            remoteCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            Debug.Log("Switched to localCanvas");
         }
-        else if (cameraOn && OVRInput.Get(OVRInput.Button.Any))
+        else if (cameraOn && (OVRInput.Get(OVRInput.Button.Any) || Input.GetKeyDown("space")))
         {
             //text.text = canvas.renderMode.ToString();
             cameraOn = false;
-            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            localCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            remoteCanvas.renderMode = RenderMode.ScreenSpaceCamera;
+            Debug.Log("Switched to remoteCanvas");
         }
 	}
 
@@ -87,5 +111,49 @@ public class CameraSeeTroughScript : MonoBehaviour {
         background.texture = backCam;
 
         camAvailable = true;
+    }
+
+    private void SetTexturePlayer1()
+    {
+        if (PhotonNetwork.connected)
+        {
+            hashtable["player1Texture"] = backCam;
+
+            PhotonNetwork.room.SetCustomProperties(hashtable);
+            Debug.Log("Player 1 texture sent");
+        }
+
+    }
+
+    private void ShowTexturePlayer1()
+    {
+        if (PhotonNetwork.connected)
+        {
+            WebCamTexture player2Texture = (WebCamTexture)PhotonNetwork.room.CustomProperties["player2Texture"];
+            remotePlane.texture = player2Texture;
+            Debug.Log("Player 2 texture received");
+        }
+    }
+
+    private void SetTexturePlayer2()
+    {
+        if (PhotonNetwork.connected)
+        {
+            hashtable["player2Texture"] = backCam;
+
+            PhotonNetwork.room.SetCustomProperties(hashtable);
+            Debug.Log("Player 2 texture sent");
+        }
+
+    }
+
+    private void ShowTexturePlayer2()
+    {
+        if (PhotonNetwork.connected)
+        {
+            WebCamTexture player1Texture = (WebCamTexture)PhotonNetwork.room.CustomProperties["player1Texture"];
+            remotePlane.texture = player1Texture;
+            Debug.Log("Player 1 texture received");
+        }
     }
 }
