@@ -14,10 +14,9 @@ public enum NetworkEventCodes : byte {
 }
 
 public class PhotonController : PunBehaviour {
+
 	public string GameVersion;
 	public Transform RemoteAvatarSlot;
-
-    public Text text;
 
 	public byte MaxPlayers = 2;
 
@@ -56,14 +55,11 @@ public class PhotonController : PunBehaviour {
 
 		if (eventcode == (byte) NetworkEventCodes.ParticipantJoined) {
 			GameObject go = null;
-            
-			text.text = "[PhotonController]: Executing VR avatar instantiation";
+
 
 			if (PhotonNetwork.player.ID == senderid) {
-                text.text = "[PhotonController]: Setup local avatar for sending";
 				go = Instantiate (LocalAvatarPrefab, TrackingSpace);
 			} else {
-                text.text = "[PhotonController]: Instantiated remote avatar";
 				if (RemoteAvatarPrefab) {
 					go = Instantiate (RemoteAvatarPrefab, RemoteAvatarSlot);
 				}
@@ -80,17 +76,14 @@ public class PhotonController : PunBehaviour {
 	}
 	
 	public override void OnConnectedToMaster () {
-        text.text = "[PhotonController]: Connected to master";
 		PhotonNetwork.JoinRandomRoom ();
 	}
 
 	public override void OnJoinedLobby () {
-        text.text = "[PhotonController]: Lobby joined";
 		PhotonNetwork.JoinRandomRoom ();
 	}
 	
 	public void OnPhotonRandomJoinFailed () {
-        text.text = "[PhotonController]: Random join failed";
 		PhotonNetwork.CreateRoom (
 			null,
 			new RoomOptions () {
@@ -101,11 +94,9 @@ public class PhotonController : PunBehaviour {
 	}
 	
 	public override void OnFailedToConnectToPhoton (DisconnectCause cause) {
-        text.text = "[PhotonController]: Failed to connect to Photon: " + cause;
 	}
 	
 	public override void OnJoinedRoom () {
-        text.text = "[PhotonController]: Joined room";
 		int viewId = PhotonNetwork.AllocateViewID ();
 
 		PhotonNetwork.RaiseEvent (

@@ -15,21 +15,20 @@ public class CameraSeeTroughScript : PunBehaviour {
 
     private Texture2D receivedTexture;
 
-    private int _CaptureCounter = 0;
-
     public RawImage localBackground;
     public AspectRatioFitter localFitter;
 
     public RawImage remoteBackground;
     public AspectRatioFitter remoteFitter;
 
-    public Text localDebugText;
-
     public Canvas localCanvas;
     public Canvas remoteCanvas;
 
     private bool player1remote;
     private bool player2remote;
+
+    public Text localConnectionStatus;
+    public Text remoteConnectionStatus;
 
     private int arrayLength;
 
@@ -42,27 +41,27 @@ public class CameraSeeTroughScript : PunBehaviour {
         player2remote = false;
         localCanvas.renderMode = RenderMode.ScreenSpaceCamera;
         remoteCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        TakeSnapshot();
-        //text.text = canvas.renderMode.ToString();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
         if(GameObject.Find("RemoteAvatar(Clone)")){
-            Debug.Log("playerID = " + PhotonNetwork.player.ID);
+
+            localConnectionStatus.text = "Connected";
+            remoteConnectionStatus.text = "Connected";
 
             if(PhotonNetwork.player.ID == 1) {
                 SendPlayer1Props();
-                localDebugText.text = player2remote.ToString();
                 GetPlayer2Props();
             }
             else if(PhotonNetwork.player.ID == 2) {
                 SendPlayer2Props();
-                localDebugText.text = player1remote.ToString();
                 GetPlayer1Props();
             }
 
+        }else{
+            localConnectionStatus.text = "Not Connected";
+            remoteConnectionStatus.text = "Not Connected";
         }
               
         if(!camAvailable)
@@ -88,7 +87,6 @@ public class CameraSeeTroughScript : PunBehaviour {
             cameraOn = true;
             localCanvas.renderMode = RenderMode.ScreenSpaceCamera;
             remoteCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            TakeSnapshot();
             if (PhotonNetwork.player.ID == 1)
             {
                 player1remote = false;
@@ -97,11 +95,9 @@ public class CameraSeeTroughScript : PunBehaviour {
             {
                 player2remote = false;
             }
-            // Debug.Log("Switched to localCanvas");
         }
         else if (cameraOn && (OVRInput.Get(OVRInput.Button.Any) || Input.GetKeyDown("space")))
         {
-            //text.text = canvas.renderMode.ToString();
             cameraOn = false;
             localCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
             remoteCanvas.renderMode = RenderMode.ScreenSpaceCamera;
@@ -113,10 +109,7 @@ public class CameraSeeTroughScript : PunBehaviour {
             {
                 player2remote = true;
             }
-            // Debug.Log("Switched to remoteCanvas");
         }
-
-        localDebugText.text = arrayLength.ToString();
 	}
 
     void InitCamera()
@@ -126,7 +119,6 @@ public class CameraSeeTroughScript : PunBehaviour {
 
         if (devices.Length == 0)
         {
-            //text.text = "No Camera detected";
             camAvailable = false;
             return;
         }
@@ -141,7 +133,6 @@ public class CameraSeeTroughScript : PunBehaviour {
 
         if (backCam == null)
         {
-            //text.text =  "Unable to find back camera";
             return;
         }
 
@@ -178,15 +169,6 @@ public class CameraSeeTroughScript : PunBehaviour {
                 player2Texture = (byte[])PhotonNetwork.room.CustomProperties["player2Texture"];
                 DecodePNG(player2Texture);
             }
-
-            /*if (player2Texture == null)
-            {
-                localDebugText.text = "null";
-            }
-            else
-            {
-                localDebugText.text = "not null";
-            }*/
         }
     }
 
@@ -218,18 +200,11 @@ public class CameraSeeTroughScript : PunBehaviour {
                 player1Texture = (byte[])PhotonNetwork.room.CustomProperties["player1Texture"];
                 DecodePNG(player1Texture);
             }
-
-            /*if(player1Texture == null){
-                localDebugText.text = "null";
-            } else{
-                localDebugText.text = "not null";
-            }*/
         }
     }
 
     private byte[] EncodePNG(){
         Texture2D texture2d = new Texture2D(backCam.width, backCam.height);
-        //texture2d.Resize(texture2d.width/16, texture2d.height/16, texture2d.format, false);
         texture2d.Apply();
         texture2d.SetPixels(backCam.GetPixels());
 
@@ -238,19 +213,9 @@ public class CameraSeeTroughScript : PunBehaviour {
 
     private void DecodePNG(byte[] receivedByte)
     {
-        arrayLength = receivedByte.Length;
         receivedTexture = null;
         receivedTexture = new Texture2D(backCam.width, backCam.height);
         receivedTexture.LoadImage(receivedByte);
         remoteBackground.texture = receivedTexture;
-    }
-
-    private void TakeSnapshot(){
-        Texture2D snap = new Texture2D(backCam.width, backCam.height);
-        snap.Apply();
-        snap.SetPixels(backCam.GetPixels());
-
-        System.IO.File.WriteAllBytes(Application.persistentDataPath + "/snap" + _CaptureCounter.ToString() + ".png", snap.EncodeToPNG());
-        ++_CaptureCounter;
     }
 }
