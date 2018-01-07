@@ -418,7 +418,7 @@ febb860c81dce3b7f633ebf56de24419 Assembly-CSharp.dll:.IdleRunJump
 55b3a7b2ff445b75487922996bd8611e Assembly-CSharp.dll:ExitGames.Demos.DemoAnimator.PlayerManager
 080712d5bec8e6ec128ae566afef7b09 Assembly-CSharp.dll:VRTK.UnityEventHelper.VRTK_InteractUse_UnityEvents
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.RandomMatchmaker
-7a242913c706a082925d89ec057d64e8 Assembly-CSharp.dll:.CameraSeeTroughScript
+62bc3a5a69edf09e66028cd9211c03ff Assembly-CSharp.dll:.CameraSeeTroughScript
 31902b17ebbee46b5918383d3358ad35 Assembly-CSharp.dll:VRTK.Examples.Archery.BowAim
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
