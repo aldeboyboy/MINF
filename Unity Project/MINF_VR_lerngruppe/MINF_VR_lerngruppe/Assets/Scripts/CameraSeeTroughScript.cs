@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon;
+using System.Threading;
 
 public class CameraSeeTroughScript : PunBehaviour {
 
@@ -10,6 +11,10 @@ public class CameraSeeTroughScript : PunBehaviour {
     private WebCamTexture backCam;
     private Texture defaultBackground;
     private bool cameraOn;
+
+    private Thread cameraThread;
+    private Thread sendingThread;
+    private Thread gettingThread;
 
     private ExitGames.Client.Photon.Hashtable hashtable = new ExitGames.Client.Photon.Hashtable();
 
@@ -37,10 +42,20 @@ public class CameraSeeTroughScript : PunBehaviour {
         InitCamera();
 
         cameraOn = true;
+
         player1remote = false;
         player2remote = false;
+
         localCanvas.renderMode = RenderMode.ScreenSpaceCamera;
         remoteCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+
+        sendingThread = new Thread(SendData);
+        gettingThread = new Thread(GetData);
+        cameraThread = new Thread(SetCamera);
+
+        sendingThread.Start();
+        gettingThread.Start();
+        cameraThread.Start();
 	}
 	
 	// Update is called once per frame
@@ -50,36 +65,17 @@ public class CameraSeeTroughScript : PunBehaviour {
             localConnectionStatus.text = "Connected";
             remoteConnectionStatus.text = "Connected";
 
-            if(PhotonNetwork.player.ID == 1) {
-                SendPlayer1Props();
-                GetPlayer2Props();
-            }
-            else if(PhotonNetwork.player.ID == 2) {
-                SendPlayer2Props();
-                GetPlayer1Props();
-            }
-
         }else{
             localConnectionStatus.text = "Not Connected";
             remoteConnectionStatus.text = "Not Connected";
         }
+
               
         if(!camAvailable)
         {
             return;
         }
 
-        float ratio = (float)backCam.width / (float)backCam.height;
-        localFitter.aspectRatio = ratio;
-        remoteFitter.aspectRatio = ratio;
-
-        float scaleY = backCam.videoVerticallyMirrored ? -1f : 1f;
-        localBackground.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
-        remoteBackground.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
-
-        int orient = -backCam.videoRotationAngle;
-        localBackground.rectTransform.localEulerAngles = new Vector3(0, 0, orient);
-        remoteBackground.rectTransform.localEulerAngles = new Vector3(0, 0, orient);
 
         if (!cameraOn && (OVRInput.Get(OVRInput.Button.Any) || Input.GetKeyDown("space")))
         {
@@ -217,5 +213,49 @@ public class CameraSeeTroughScript : PunBehaviour {
         receivedTexture = new Texture2D(backCam.width, backCam.height);
         receivedTexture.LoadImage(receivedByte);
         remoteBackground.texture = receivedTexture;
+    }
+
+    private void SendData(){
+        if (GameObject.Find("RemoteAvatar(Clone)"))
+        {
+            if (PhotonNetwork.player.ID == 1)
+            {
+                SendPlayer1Props();
+            }
+            else if (PhotonNetwork.player.ID == 2)
+            {
+                SendPlayer2Props();
+            }
+        }
+    }
+
+    private void GetData()
+    {
+        if (GameObject.Find("RemoteAvatar(Clone)"))
+        {
+            if (PhotonNetwork.player.ID == 1)
+            {
+                GetPlayer2Props();
+            }
+            else if (PhotonNetwork.player.ID == 2)
+            {
+                GetPlayer1Props();
+            }
+        }
+    }
+
+    private void SetCamera()
+    {
+        float ratio = (float)backCam.width / (float)backCam.height;
+        localFitter.aspectRatio = ratio;
+        remoteFitter.aspectRatio = ratio;
+
+        float scaleY = backCam.videoVerticallyMirrored ? -1f : 1f;
+        localBackground.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
+        remoteBackground.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
+
+        int orient = -backCam.videoRotationAngle;
+        localBackground.rectTransform.localEulerAngles = new Vector3(0, 0, orient);
+        remoteBackground.rectTransform.localEulerAngles = new Vector3(0, 0, orient);
     }
 }
